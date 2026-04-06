@@ -1,30 +1,42 @@
 const audience = [
   "Builders shaping products, internal tools, and applied automation.",
-  "Business operators looking for practical systems that can reduce drag.",
-  "Business owners evaluating where autonomous agents can create leverage.",
-  "Technicians who care how agent harnesses behave in real environments."
+  "Operators who want practical systems that remove drag instead of adding hype.",
+  "Founders and owners evaluating where autonomous agents can create leverage.",
+  "Technical people who care how agent harnesses behave in real environments."
 ];
 
 const topics = [
-  "Agentic workflows grounded in real business and technical constraints.",
-  "Autonomous systems, agent harnesses, and the tooling around them.",
-  "What works, what breaks, and where current approaches still need rigor."
+  "OpenClaw, agent harnesses, and applied autonomous workflows.",
+  "What works, what breaks, and how to make these systems more usable.",
+  "Practical demos, honest discussion, and a stronger local builder network."
 ];
 
 export default function HomePage() {
   return (
     <main className="page-shell">
       <section className="hero">
-        <p className="eyebrow">Northwest Arkansas</p>
-        <h1>NWA OpenClaw Meetup</h1>
-        <p className="lede">
-          NWA means <strong>Northwest Arkansas</strong>. This meetup is for
-          people who are fascinated by agentic autonomous systems and the
-          harnesses used to run them well.
-        </p>
+        <div className="hero-copy">
+          <p className="eyebrow">Northwest Arkansas</p>
+          <h1>NWA OpenClaw Meetup</h1>
+          <p className="lede">
+            A clean, local meetup page for people in <strong>Northwest Arkansas</strong>{" "}
+            who want to explore OpenClaw, agent harnesses, and practical autonomous
+            systems with other serious builders.
+          </p>
+        </div>
+
+        <div className="hero-actions">
+          <a className="primary-cta" href="#signup">
+            Get notified when signup opens
+          </a>
+          <p className="cta-note">
+            Venue, date, and RSVP details are being finalized now.
+          </p>
+        </div>
+
         <div className="hero-meta">
-          <span>100+ people have already signed up.</span>
-          <span>Logistics and date details are still being finalized.</span>
+          <span>One-page landing site for meetup discovery.</span>
+          <span>Designed to be easy to demo live and easy to update later.</span>
         </div>
       </section>
 
@@ -40,8 +52,8 @@ export default function HomePage() {
         </article>
 
         <article className="panel">
-          <p className="section-label">What We Explore</p>
-          <h2>Practical conversations about autonomous agents, not vague hype.</h2>
+          <p className="section-label">Why Show Up</p>
+          <h2>Practical discussion, local connection, and a solid starting point.</h2>
           <ul>
             {topics.map((item) => (
               <li key={item}>{item}</li>
@@ -50,12 +62,13 @@ export default function HomePage() {
         </article>
       </section>
 
-      <section className="note-panel">
-        <p className="section-label">Current Status</p>
+      <section className="note-panel" id="signup">
+        <p className="section-label">Signup</p>
+        <h2>RSVP link coming next.</h2>
         <p>
-          Interest is already strong, with more than 100 sign-ups so far. The
-          meetup page will be updated once venue, schedule, and RSVP details are
-          confirmed.
+          This section is intentionally ready for the real signup form or RSVP link.
+          When that is available, replace this block with the destination you want
+          people to use and keep the rest of the page as-is.
         </p>
       </section>
     </main>
