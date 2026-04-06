@@ -16,9 +16,8 @@ export default function HomePage() {
     <main className="page-shell">
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">🦞 Northwest Arkansas</p>
+          <p className="eyebrow">Northwest Arkansas</p>
           <h1>NWA OpenClaw Meetup</h1>
-          <p className="theme-kicker">OpenClaw energy, local builders, lobster-red demo mode.</p>
           <p className="lede">
             A clean, local meetup page for people in <strong>Northwest Arkansas</strong>{" "}
             who want to explore OpenClaw, agent harnesses, and practical autonomous
@@ -36,8 +35,8 @@ export default function HomePage() {
         </div>
 
         <div className="hero-meta">
-          <span>Lobster-red demo pass for the meetup landing page.</span>
-          <span>Still clean, readable, and ready for a real signup link.</span>
+          <span>One-page landing site for meetup discovery.</span>
+          <span>Designed to be easy to demo live and easy to update later.</span>
         </div>
       </section>
 
