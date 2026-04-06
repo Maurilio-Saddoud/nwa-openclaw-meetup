@@ -1,14 +1,15 @@
 :root {
   color-scheme: dark;
-  --bg: #0b1020;
-  --bg-accent: #16203b;
-  --panel: rgba(12, 18, 34, 0.72);
-  --panel-border: rgba(173, 190, 255, 0.18);
-  --text: #f5f7fb;
-  --muted: #aab4d2;
-  --highlight: #85e0c8;
-  --highlight-soft: rgba(133, 224, 200, 0.14);
-  --shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
+  --bg: #220708;
+  --bg-accent: #4a1014;
+  --panel: rgba(46, 10, 14, 0.78);
+  --panel-border: rgba(255, 186, 186, 0.18);
+  --text: #fff5f3;
+  --muted: #f0c6c1;
+  --highlight: #ff6b57;
+  --highlight-strong: #ff8f4d;
+  --highlight-soft: rgba(255, 107, 87, 0.16);
+  --shadow: 0 24px 70px rgba(27, 4, 6, 0.48);
 }
 
 * {
@@ -26,8 +27,9 @@ body {
   font-family: "Avenir Next", "Trebuchet MS", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(133, 224, 200, 0.18), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(81, 123, 255, 0.16), transparent 24%),
+    radial-gradient(circle at top, rgba(255, 143, 77, 0.18), transparent 26%),
+    radial-gradient(circle at 85% 15%, rgba(255, 107, 87, 0.18), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(130, 17, 32, 0.26), transparent 28%),
     linear-gradient(160deg, var(--bg) 0%, var(--bg-accent) 100%);
 }
 
@@ -52,10 +54,22 @@ ul {
 .hero,
 .panel,
 .note-panel {
+  position: relative;
+  overflow: hidden;
   backdrop-filter: blur(14px);
   background: var(--panel);
   border: 1px solid var(--panel-border);
   box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: "🦞";
+  position: absolute;
+  right: 1.6rem;
+  top: 1.2rem;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  opacity: 0.14;
+  transform: rotate(10deg);
 }
 
 .hero {
@@ -70,7 +84,7 @@ ul {
 .eyebrow,
 .section-label {
   margin: 0 0 0.75rem;
-  color: var(--highlight);
+  color: var(--highlight-strong);
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.78rem;
@@ -79,7 +93,7 @@ ul {
 
 h1 {
   font-family: "Sora", "Avenir Next", sans-serif;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   max-width: 10ch;
   font-size: clamp(3rem, 8vw, 5.5rem);
   line-height: 0.95;
@@ -89,6 +103,14 @@ h2 {
   margin-bottom: 1rem;
   font-size: 1.45rem;
   line-height: 1.2;
+}
+
+.theme-kicker {
+  margin-bottom: 1rem;
+  color: #ffd7cf;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .lede {
@@ -113,13 +135,13 @@ h2 {
   justify-content: center;
   padding: 0.95rem 1.2rem;
   border-radius: 999px;
-  background: var(--highlight);
-  color: #08111f;
+  background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-strong) 100%);
+  color: #2a0607;
   text-decoration: none;
   font-weight: 800;
   letter-spacing: 0.01em;
   transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
-  box-shadow: 0 10px 30px rgba(133, 224, 200, 0.28);
+  box-shadow: 0 12px 34px rgba(255, 107, 87, 0.34);
 }
 
 .primary-cta:hover {
@@ -144,7 +166,7 @@ h2 {
   padding: 0.8rem 1rem;
   border-radius: 999px;
   background: var(--highlight-soft);
-  border: 1px solid rgba(133, 224, 200, 0.2);
+  border: 1px solid rgba(255, 143, 77, 0.24);
   color: var(--text);
   font-size: 0.95rem;
 }
@@ -160,6 +182,17 @@ h2 {
 .note-panel {
   border-radius: 24px;
   padding: 1.5rem;
+}
+
+.panel::before,
+.note-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--highlight) 0%, var(--highlight-strong) 60%, transparent 100%);
+  opacity: 0.85;
 }
 
 ul {
@@ -219,5 +252,11 @@ li + li {
 
   .primary-cta {
     width: 100%;
+  }
+
+  .hero::after {
+    right: 1rem;
+    top: 1rem;
+    font-size: 2.4rem;
   }
 }
